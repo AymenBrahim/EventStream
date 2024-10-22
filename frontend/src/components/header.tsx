@@ -19,10 +19,11 @@ export default function Header() {
   return (
     <header className="p-2 flex justify-between">
       <Link to="/" className="[&.active]:font-bold">
-        Events
+        EventStream
       </Link>
-      <div className="flex x-5">
-        <h1 className="mr-10">{user?.username}</h1>
+
+      <h1 className="mr-auto ml-10">{user?.username}</h1>
+      <div className="flex x-5 gap-5">
         <Button
           onClick={() => {
             signout();
@@ -31,6 +32,9 @@ export default function Header() {
         >
           Signout
         </Button>
+        <Link to="/create_event">
+          <Button variant={"ghost"}>Create a new Event</Button>
+        </Link>
       </div>
     </header>
   );

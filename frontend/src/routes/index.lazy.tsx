@@ -38,9 +38,6 @@ function Index() {
       const events = old as Event[];
 
       const index = events.findIndex((obj) => obj.id == eventId);
-      if (index === events.length - 1) {
-        return events.slice(0, events.length - 1);
-      }
 
       const event = events[index];
       const joiners = [...event.joiners, user];
@@ -58,9 +55,6 @@ function Index() {
       const events = old as Event[];
 
       const index = events.findIndex((obj) => obj.id == eventId);
-      if (index === events.length - 1) {
-        return events.slice(0, events.length - 1);
-      }
 
       const event = events[index];
       const joiners = event.joiners.filter(({ id }) => id !== user.id);
